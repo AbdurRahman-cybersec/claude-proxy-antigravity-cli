@@ -110,6 +110,27 @@ These are intentional and documented:
 
 ---
 
+## Screenshots
+
+### Antigravity Proxy Server
+The local Antigravity proxy running and ready to accept requests.
+
+![Antigravity Proxy Server](screenshots/antigravity-proxy-server.png)
+
+---
+
+### Claude CLI (PowerShell)
+Interactive Claude chat running via the local Antigravity proxy.
+
+![Claude CLI](screenshots/claude-proxy-cli.png)
+
+---
+
+### Localhost Web Dashboard
+The Antigravity web dashboard available at `http://localhost:8080`.
+
+![Localhost Web](screenshots/localhost-web.png)
+
 ## License
 
 MIT License
