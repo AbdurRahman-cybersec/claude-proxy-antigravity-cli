@@ -3,6 +3,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-stable-success)
 ![Claude](https://img.shields.io/badge/Claude-Opus%204.5-orange)
+![Downloads](https://img.shields.io/github/downloads/AbdurRahman-cybersec/claude-proxy-antigravity-cli/total)
+
 
 # Claude CLI (PowerShell) — Antigravity Proxy Client
 
