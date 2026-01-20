@@ -38,11 +38,111 @@ You do **not** need to clone this repository or install it as a package. Downloa
 
 ---
 
+## How This Works (One-Minute Overview)
+
+This CLI does **not** connect directly to Anthropic.
+
+Instead, it talks to a **local Antigravity Claude Proxy** running on your machine:
+
+---
+
 ## Quick Start (No Git Clone Required)
 
-1. Download **`claude-cli.ps1`** from this repository.
-2. Open PowerShell in the download folder.
-3. Run (one‑time, standard PowerShell setting):
+### Step 1 — Download the Script
+
+Download `claude-cli.ps1` from:
+- This repository, or
+- The latest GitHub Release
+
+You do **not** need to clone the repository.
+
+---
+
+### Step 2 — Allow PowerShell Script Execution (One-Time)
+
+Open PowerShell and run:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+---
+
+### Step 3 — Run the CLI
+
+Open PowerShell in the directory containing `claude-cli.ps1` and run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\claude-cli.ps1
+```
+
+---
+
+### Step 4 — Run Behavior (Important)
+
+On the **run**, **two PowerShell windows will open**:
+
+1. **Claude CLI Window**  
+   This is the interactive chat interface you will use.
+
+2. **Antigravity Proxy Server Window**  
+   This runs the local proxy server that connects the CLI to Claude.
+
+This behavior is **normal and expected**.
+
+---
+
+### Step 5 — Authenticate with Antigravity (One-Time Setup)
+
+When the proxy starts, your browser may open automatically at:
+
+```
+http://localhost:8080
+```
+
+If it does not open automatically, open it manually.
+
+In the browser:
+1. Navigate to **Accounts**
+2. Sign in using your **Google account**
+
+Authentication is required before Claude models can be used.
+
+---
+
+### Step 6 — Restart After Login (Required)
+
+After signing in successfully:
+
+1. Press **CTRL + C** in **both PowerShell windows**:
+   - Claude CLI window
+   - Antigravity Proxy Server window
+2. Close both windows
+3. Re-run the script:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\claude-cli.ps1
+```
+
+---
+
+### Step 7 — Start Chatting with Claude
+
+After restarting:
+- The proxy will reuse your authenticated session
+- The CLI will connect automatically
+- You can now chat with **Claude Opus**
+
+---
+
+### Available Commands
+
+Inside the CLI, the following commands are available:
+
+- `/reset` — Clear conversation history
+- `/save` — Save the current transcript
+- `/save C:\path\to\file.txt` — Save transcript to a custom path
+- `/exit` — Exit the CLI
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -138,6 +238,42 @@ Interactive Claude chat running via the local Antigravity proxy.
 The Antigravity web dashboard available at `http://localhost:8080`.
 
 ![Localhost Web](screenshots/localhost-web.png)
+
+## FAQ
+
+## Do I Need Antigravity IDE?
+
+**No.**
+
+You do **not** need to open or run the Antigravity IDE manually.
+
+This script works with the **Antigravity Claude Proxy**, not the IDE UI.
+
+If the proxy is not running, the script can automatically start it for you using `npx`.
+
+
+The Antigravity proxy:
+- Runs locally on your computer
+- Uses an Anthropic-compatible `/v1/messages` API
+- Handles authentication and rate-limiting
+- Requires a one-time sign-in via your browser
+
+
+### Why does a browser window open?
+The Antigravity proxy runs locally and uses a browser-based login for authentication.
+
+### Why do I need to sign in with Google?
+Antigravity uses Google sign-in to manage access, quotas, and model usage.
+
+### Do I need to sign in every time?
+No. After the first successful login, the session is reused.
+
+### Is my API key exposed?
+No. This script does not store or transmit API keys.
+
+
+
+
 
 ## License
 
