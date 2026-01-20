@@ -1,3 +1,9 @@
+![Platform](https://img.shields.io/badge/platform-Windows-blue)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-stable-success)
+![Claude](https://img.shields.io/badge/Claude-Opus%204.5-orange)
+
 # Claude CLI (PowerShell) — Antigravity Proxy Client
 
 A **single‑file** interactive PowerShell chat client for Claude that talks to a local **Antigravity Claude Proxy** via the Anthropic‑compatible **`/v1/messages`** API.
