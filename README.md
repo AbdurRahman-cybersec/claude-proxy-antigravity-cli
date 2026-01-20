@@ -85,8 +85,14 @@ On the **run**, **two PowerShell windows will open**:
 1. **Claude CLI Window**  
    This is the interactive chat interface you will use.
 
-2. **Antigravity Proxy Server Window**  
+
+   ![Claude CLI](screenshots/claude-proxy-cli.png)
+
+3. **Antigravity Proxy Server Window**  
    This runs the local proxy server that connects the CLI to Claude.
+
+   
+   ![Antigravity Proxy Server](screenshots/antigravity-proxy-server.png)
 
 This behavior is **normal and expected**.
 
@@ -270,6 +276,9 @@ No. After the first successful login, the session is reused.
 
 ### Is my API key exposed?
 No. This script does not store or transmit API keys.
+
+### How do i know which model am i using?
+You can ask the model or you can track the usage in the localhost under dasboard with the graph.
 
 
 
