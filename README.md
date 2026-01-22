@@ -126,6 +126,14 @@ Switch to the **Claude CLI window** and start chatting.
 Enjoy **Claude Opus 4.5 + Thinking**  
 Ensure the **Antigravity proxy window stays open** while using Claude.
 
+## Extar Feature
+
+Unzip the rar file and open the .html file for UI.
+
+![Antigravity Proxy Server](screenshots/Claude-custom-ui.png)
+
+
+
 
 ### Available Commands
 
