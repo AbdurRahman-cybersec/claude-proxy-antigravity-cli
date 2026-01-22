@@ -58,20 +58,32 @@ Instead, it talks to a **local Antigravity Claude Proxy** running on your machin
 ---
 
 ## Quick Start (No Git Clone Required)
-
+```Make sure Antigravity IDE is open.```
 ### Step 1 — Download the Script
+Download the `claude-cli.ps1` file from the **Releases** section of the GitHub repository.
 
-Download `claude-cli.ps1` from:
-- This repository, or
-- The latest GitHub Release
-
-You do **not** need to clone the repository.
+> You do **not** need to clone the repository.
 
 ---
 
-### Step 2 — Allow PowerShell Script Execution (One-Time)
+### Step 2 — Open PowerShell
+Open a **PowerShell window manually**.
 
-Open PowerShell and run:
+⚠️ Do **not** double‑click the `.ps1` file.
+
+---
+
+### Step 3 — Navigate to the Script Folder
+In PowerShell, change directory to the folder where `claude-cli.ps1` is located:
+
+```powershell
+cd path\to\your\folder
+```
+
+---
+
+### Step 4 — Allow Script Execution (One‑Time Only)
+Run the following command **once**:
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -79,78 +91,40 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ---
 
-### Step 3 — Run the CLI
-
-Open PowerShell in the directory containing `claude-cli.ps1` and run:
+### Step 5 — Run the CLI
+Run the script using:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\claude-cli.ps1
 ```
 
+> You must run this command **every time** you want to use Claude.
+
 ---
 
-### Step 4 — Run Behavior (Important)
-
-On the **run**, **two PowerShell windows will open**:
+### Step 6 — Two PowerShell Windows Will Open (Expected)
+When the script runs, **two PowerShell windows** will open:
 
 1. **Claude CLI Window**  
-   This is the interactive chat interface you will use.
+   This is the interactive chat interface.
 
-
-   ![Claude CLI](screenshots/claude-proxy-cli.png)
+![Claude CLI](screenshots/claude-proxy-cli.png)
 
 3. **Antigravity Proxy Server Window**  
-   This runs the local proxy server that connects the CLI to Claude.
+   This runs the local proxy and must remain open in the background.
 
-   
-   ![Antigravity Proxy Server](screenshots/antigravity-proxy-server.png)
+![Antigravity Proxy Server](screenshots/antigravity-proxy-server.png)
 
-This behavior is **normal and expected**.
-
----
-
-### Step 5 — Authenticate with Antigravity (One-Time Setup)
-
-When the proxy starts, your browser may open automatically at:
-
-```
-http://localhost:8080
-```
-
-If it does not open automatically, open it manually.
-
-In the browser:
-1. Navigate to **Accounts**
-2. Sign in using your **Google account**
-
-Authentication is required before Claude models can be used.
+This behavior is **normal and required**.
 
 ---
 
-### Step 6 — Restart After Login (Required)
+### Step 7 — Use Claude
+Switch to the **Claude CLI window** and start chatting.
 
-After signing in successfully:
+Enjoy **Claude Opus 4.5 + Thinking**  
+Ensure the **Antigravity proxy window stays open** while using Claude.
 
-1. Press **CTRL + C** in **both PowerShell windows**:
-   - Claude CLI window
-   - Antigravity Proxy Server window
-2. Close both windows
-3. Re-run the script:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\claude-cli.ps1
-```
-
----
-
-### Step 7 — Start Chatting with Claude
-
-After restarting:
-- The proxy will reuse your authenticated session
-- The CLI will connect automatically
-- You can now chat with **Claude Opus**
-
----
 
 ### Available Commands
 
@@ -164,8 +138,7 @@ Inside the CLI, the following commands are available:
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
-
-4. Run the script:
+Run the script:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\claude-cli.ps1
