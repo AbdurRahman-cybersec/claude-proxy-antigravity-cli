@@ -11,7 +11,8 @@ The PowerShell script has been scanned with **VirusTotal**.
 
 **Report:**  
   https://www.virustotal.com/gui/file/befc9c5fe69d816c597293e25fdc100cc2991c5176a07f65918f346219d4551c
-- **Result:** No malicious detections
+
+`Result: No malicious detections`
 
 This scan is provided for transparency.  
 Users are encouraged to review the script source before running it.
